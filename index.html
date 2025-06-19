@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Ecosystem IT Salary Calculator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Floating Banner -->
+    <div id="floating-banner" class="floating-banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <span class="banner-title">🎯 New Survey Available!</span>
+                <span class="banner-description">Help us improve by participating in the Developer Ecosystem Survey 2025</span>
+            </div>
+            <div class="banner-actions">
+                <a href="#" class="banner-btn primary">Take Survey</a>
+                <button class="banner-close" onclick="closeBanner()">×</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-container">
+        <div class="main-container">
+            <div class="content-wrapper">
+                <header class="header">
+                    <h1>Developer Ecosystem</h1>
+                    <h2>IT Salary Calculator</h2>
+                    <p class="subtitle">Based on the Developer Ecosystem Survey 2024</p>
+                </header>
+
+                <div class="content-section">
+                    <div class="intro-text">
+                        <h3>Estimate Your Tech Career Earnings</h3>
+                        <p>Use our calculator to estimate your income potential based on software developer skills, programming language, location, and experience. The data is sourced from our comprehensive Developer Ecosystem Survey, which gathers insights from thousands of developers worldwide.</p>
+
+                        <p>This tool helps you understand salary trends in the tech industry and make informed decisions about your career path. Whether you're just starting out or looking to advance your career, our calculator provides valuable insights into compensation across different technologies and regions.</p>
+                    </div>
+
+                    <div class="calculator-container">
+                        <div class="filters-section">
+                            <div class="filter-row">
+                                <div class="filter-group">
+                                    <label for="country-select">Country</label>
+                                    <div class="custom-select">
+                                        <select id="country-select" aria-label="Select country">
+                                            <option value="">Select a country</option>
+                                        </select>
+                                        <div class="select-arrow">
+                                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                                <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label for="language-select">Programming Language</label>
+                                    <div class="custom-select">
+                                        <select id="language-select" aria-label="Select programming language">
+                                            <option value="">Select a language</option>
+                                        </select>
+                                        <div class="select-arrow">
+                                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                                <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>Salary by Experience Level</h3>
+                                <div class="chart-info">
+                                    <span class="info-text">All figures in USD per year</span>
+                                </div>
+                            </div>
+
+                            <div class="chart-wrapper">
+                                <canvas id="salaryChart" width="800" height="400"></canvas>
+                            </div>
+
+                            <div class="info-message">
+                                <div class="info-content">
+                                    <div class="info-icon">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="2"/>
+                                            <path d="M8 12V8M8 4H8.01" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <p>Salary data is based on the Developer Ecosystem Survey 2024. Select a country and programming language to view salary distribution by experience level.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <h3>JetBrains</h3>
+                    <p>Developer Ecosystem</p>
+                </div>
+                <div class="footer-description">
+                    <p>Empowering developers worldwide with insights from our annual Developer Ecosystem Survey. Join thousands of developers who trust our data to make informed career decisions.</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Developer Survey 2024</a></li>
+                    <li><a href="#">Salary Trends Report</a></li>
+                    <li><a href="#">Career Guide</a></li>
+                    <li><a href="#">Industry Insights</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="#">Salary Calculator</a></li>
+                    <li><a href="#">Skills Assessment</a></li>
+                    <li><a href="#">Career Path Finder</a></li>
+                    <li><a href="#">Market Analysis</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Developer Forum</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 JetBrains. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip">
+        <div class="tooltip-content">
+            <div class="tooltip-header">
+                <div class="tooltip-title"></div>
+                <div class="tooltip-close">×</div>
+            </div>
+            <div class="tooltip-body">
+                <div class="tooltip-row">
+                    <span class="tooltip-label">Experience:</span>
+                    <span class="tooltip-experience"></span>
+                </div>
+                <div class="tooltip-row">
+                    <span class="tooltip-label">Salary:</span>
+                    <span class="tooltip-salary"></span>
+                </div>
+                <div class="tooltip-row">
+                    <span class="tooltip-label">Country:</span>
+                    <span class="tooltip-country"></span>
+                </div>
+                <div class="tooltip-row">
+                    <span class="tooltip-label">Language:</span>
+                    <span class="tooltip-language"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+    <script>
+        // Banner functionality
+        function closeBanner() {
+            const banner = document.getElementById('floating-banner');
+            banner.style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 300);
+        }
+
+        // Show banner after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const banner = document.getElementById('floating-banner');
+                banner.style.transform = 'translateY(0)';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
